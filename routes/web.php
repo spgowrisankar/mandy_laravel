@@ -36,3 +36,13 @@ Route::get('/', function () {
 // Route::get('show/{id}', 'Users@show');
 Route::get('users', 'Users@index');
 Route::view('sample', 'sample',['name'=>'tommy','age'=> 20]);
+
+Route::get('/test', function() {
+    return view('test',[
+        'info' => 'Passing Parameter via Route using component'
+    ]);
+});
+// Route::view('test','test');
+Route::view('user', 'user');
+Route::post('usercontroller', 'Usercontroller@account');
+// Route::any('usercontroller', 'Usercontroller@account');
