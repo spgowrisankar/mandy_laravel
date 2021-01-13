@@ -12,3 +12,6 @@
 @else
 <h1>Invalid User And The User age is:{{$data['age']}}</h1>
 @endif
+<!-- @for($i = 0; $i <= 10; $i++ )
+<h3>The values Are: {{$i}}</h3>
+@endfor -->
