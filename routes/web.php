@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
+// $resp = Http::get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
+// dd($resp->headers());
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +22,23 @@ Route::get('/', function () {
 });
 
 // Getting data from URL
-// Route::get('/sample/{id}', function ($id) {
-//     echo $id;
-//     return view('sample');
+Route::get('/sample/{id}', function ($id) {
+    echo $id;
+    return view('sample');
+});
+// Route::get('/code', function() {
+//     return view('code');
+// });
+
+Route::get('/code', 'CodeController@coder');
+// Route::get('/wow', function(){
+//     $url = route('admin.wow');
+//     return "This URL is:". $url;
+// })->name('admin.wow');
+// Without Parameter
+// Route::get('/wow/{val?}',function ($val = null) {
+//     echo $val;
+//     return view('wow');
 // });
 
 // get Request function
@@ -35,7 +53,7 @@ Route::get('/', function () {
 // Route::get('users', 'Users@index');
 // Route::get('show/{id}', 'Users@show');
 Route::get('users', 'Users@index');
-Route::view('sample', 'sample',['name'=>'tommy','age'=> 20]);
+Route::view('sample', 'sample',['name'=>'tommy','age'=> 30]);
 
 Route::get('/test', function() {
     return view('test',[
