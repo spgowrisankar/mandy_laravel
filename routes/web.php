@@ -64,3 +64,4 @@ Route::get('/test', function() {
 Route::view('user', 'user');
 Route::post('usercontroller', 'Usercontroller@account');
 // Route::any('usercontroller', 'Usercontroller@account');
+Route::view('noaccess','noaccess');
