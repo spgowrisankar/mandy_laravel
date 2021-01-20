@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Http;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Getting data from URL
 Route::get('/sample/{id}', function ($id) {
@@ -53,7 +53,7 @@ Route::get('/code', 'CodeController@coder');
 // Route::get('users', 'Users@index');
 // Route::get('show/{id}', 'Users@show');
 Route::get('users', 'Users@index');
-Route::view('sample', 'sample',['name'=>'tommy','age'=> 30]);
+// Route::view('sample', 'sample',['name'=>'tommy','age'=> 30, 'role'=>'developer']);
 
 Route::get('/test', function() {
     return view('test',[
@@ -64,4 +64,12 @@ Route::get('/test', function() {
 Route::view('user', 'user');
 Route::post('usercontroller', 'Usercontroller@account');
 // Route::any('usercontroller', 'Usercontroller@account');
+Route::group(['middleware'=>['customAuth']], function(){
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::view('sample', 'sample',['name'=>'tommy','age'=> 30, 'role'=>'developer']);
+});
 Route::view('noaccess','noaccess');
+
+Route::get('profiles','Profiles@list');
