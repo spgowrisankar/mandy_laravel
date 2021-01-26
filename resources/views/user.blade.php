@@ -24,7 +24,7 @@
     <span style="color:red;">{{$message}}</span>
     @enderror
     <br>
-    <!-- @csrf     -->
+    @csrf
     <br>
     <input type="submit" value="Submit">
 

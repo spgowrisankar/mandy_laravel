@@ -52,7 +52,7 @@ Route::get('/code', 'CodeController@coder');
 // Accessing Controller
 // Route::get('users', 'Users@index');
 // Route::get('show/{id}', 'Users@show');
-Route::get('users', 'Users@index');
+Route::get('users', 'Users@index')->middleware('customAuth');
 // Route::view('sample', 'sample',['name'=>'tommy','age'=> 30, 'role'=>'developer']);
 
 Route::get('/test', function() {
@@ -73,3 +73,9 @@ Route::group(['middleware'=>['customAuth']], function(){
 Route::view('noaccess','noaccess');
 
 Route::get('profiles','Profiles@list');
+
+Route::get('session/get','SessionController@accessSessionData');
+Route::get('session/set','SessionController@storeSessionData');
+Route::get('session/remove','SessionController@deleteSessionData');
+
+Route::get('/error/{value}', 'ErrorController@index');
