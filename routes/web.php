@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 // $resp = Http::get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
 // dd($resp->headers());
 
@@ -22,6 +23,11 @@ use Illuminate\Support\Facades\Http;
 // });
 
 // Getting data from URL
+
+// Route::get('/cache', function () {
+//     return Cache::get('key');
+// });
+
 Route::get('/sample/{id}', function ($id) {
     echo $id;
     return view('sample');
@@ -82,7 +88,11 @@ Route::get('/error/{value}', 'ErrorController@index');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/exe','TestController@index');
 
 // dd(app()->get('hello'));
+cache()->get('abc');
+
+// dd(app());
