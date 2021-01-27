@@ -1,4 +1,9 @@
+@extends('layouts.master')
+
+@section('title', 'Code Page')
+@section('content')
 <h1>Welcome {{$data['name']}}!!</h1>
+
 <!-- {{$data['name']}}
 <br>
 {{$data['age']}}
@@ -15,3 +20,4 @@
 <!-- @for($i = 0; $i <= 10; $i++ )
 <h3>The values Are: {{$i}}</h3>
 @endfor -->
+@endsection
