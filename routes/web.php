@@ -83,3 +83,6 @@ Route::get('/error/{value}', 'ErrorController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/exe','TestController@index');
+
+// dd(app()->get('hello'));

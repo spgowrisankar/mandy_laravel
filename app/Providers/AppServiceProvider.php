@@ -13,7 +13,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
+        // $this->app->bind(UserDataRepositary::class, function($app) {
+        //     return new UserDataRepositary();
+        // });
+        // app()->bind('hello', function(){
+        //     return 'hiiii';
+        // });
     }
 
     /**
