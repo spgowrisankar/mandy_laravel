@@ -79,3 +79,7 @@ Route::get('session/set','SessionController@storeSessionData');
 Route::get('session/remove','SessionController@deleteSessionData');
 
 Route::get('/error/{value}', 'ErrorController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
