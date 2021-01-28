@@ -110,3 +110,8 @@ Route::group(['middleware'=>['formAuth']], function(){
     Route::view('sess','sess');
 
 });
+
+Route::get('/language/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('language');
+});
