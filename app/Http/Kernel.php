@@ -46,6 +46,9 @@ class Kernel extends HttpKernel
         'customAuth' => [
             \App\Http\Middleware\CheckAge::class,
         ],
+        'formAuth' => [
+            \App\Http\Middleware\FormAuth::class,
+        ],
     ];
 
     /**

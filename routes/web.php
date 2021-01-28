@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Getting data from URL
 
@@ -71,9 +71,7 @@ Route::view('user', 'user');
 Route::post('usercontroller', 'Usercontroller@account');
 // Route::any('usercontroller', 'Usercontroller@account');
 Route::group(['middleware'=>['customAuth']], function(){
-    Route::get('/', function () {
-        return view('welcome');
-    });
+
     Route::view('sample', 'sample',['name'=>'tommy','age'=> 30, 'role'=>'developer']);
 });
 Route::view('noaccess','noaccess');
@@ -96,3 +94,19 @@ Route::get('/exe','TestController@index');
 cache()->get('abc');
 
 // dd(app());
+
+
+Route::get('/sess', function(){
+
+
+    return view('sess');
+});
+
+Route::get('/logout', function(){
+    session()->forget('data');
+    return redirect('user');
+});
+Route::group(['middleware'=>['formAuth']], function(){
+    Route::view('sess','sess');
+
+});
