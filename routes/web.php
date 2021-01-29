@@ -70,14 +70,17 @@ Route::get('/test', function() {
 Route::view('user', 'user');
 Route::post('usercontroller', 'Usercontroller@account');
 // Route::any('usercontroller', 'Usercontroller@account');
+
 Route::group(['middleware'=>['customAuth']], function(){
 
     Route::view('sample', 'sample',['name'=>'tommy','age'=> 30, 'role'=>'developer']);
 });
+// Noaccestion page based on condition
 Route::view('noaccess','noaccess');
 
 Route::get('profiles','Profiles@list');
 
+// Sessions
 Route::get('session/get','SessionController@accessSessionData');
 Route::get('session/set','SessionController@storeSessionData');
 Route::get('session/remove','SessionController@deleteSessionData');
@@ -91,30 +94,32 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/exe','TestController@index');
 
 // dd(app()->get('hello'));
+// To Enable CacheServiceProvider
 cache()->get('abc');
 
 // dd(app());
 
-
+// Fpr Sessioon Route
 Route::get('/sess', function(){
-
-
     return view('sess');
 });
 
+// For Session with logout
 Route::get('/logout', function(){
     session()->forget('data');
     return redirect('user');
 });
+// For session middleware
 Route::group(['middleware'=>['formAuth']], function(){
     Route::view('sess','sess');
 
 });
-
+// For Language
 Route::get('/language/{lang}', function ($lang) {
     App::setlocale($lang);
     return view('language');
 });
 
 Route::get('connection', 'DbController@index');
+
 Route::get('contacts', 'ContactController@contact');
