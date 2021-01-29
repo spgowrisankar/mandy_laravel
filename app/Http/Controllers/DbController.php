@@ -9,7 +9,9 @@ class DbController extends Controller
 {
     //
     public function index() {
-        $data = DB::table('employee')->get();
+        // To find count
+        // $data = DB::table('employee')->count();
+        $data = DB::table('employees')->get();
         return view('connection', ['data'=>$data]);
     }
 }

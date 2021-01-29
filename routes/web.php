@@ -117,3 +117,4 @@ Route::get('/language/{lang}', function ($lang) {
 });
 
 Route::get('connection', 'DbController@index');
+Route::get('contacts', 'ContactController@contact');

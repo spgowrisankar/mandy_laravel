@@ -12,10 +12,9 @@ class EmpSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('employee')->insert([
-            'name' => 'Ram',
-            'roles' => 'Senior Developer',
-            'email' => 'ram@example.com'
+        DB::table('employees')->insert([
+            'name' => 'Vys',
+            'roles' => 'Megento Developer'
         ]);
 
     }
