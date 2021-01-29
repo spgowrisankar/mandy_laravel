@@ -115,3 +115,5 @@ Route::get('/language/{lang}', function ($lang) {
     App::setlocale($lang);
     return view('language');
 });
+
+Route::get('connection', 'DbController@index');
