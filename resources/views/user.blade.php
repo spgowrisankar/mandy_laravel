@@ -8,19 +8,25 @@
     </ul>
 </div>
 @endif -->
-<form action="usercontroller" method="post">
-    <label for="Email">Email:</label>
-    <input type="text" name="email">
+<form action="companyController" method="post">
+    <label for="">Select</label>
+    <select class="" name="id">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+    <label for="name">Name:</label>
+    <input type="text" name="name">
     <br>
-    @error('email')
+    @error('name')
     <span style="color:red;">{{$message}}</span>
     @enderror
     <br>
     <br>
-    <label for="Password">Password:</label>
-    <input type="password" name="password">
+    <label for="roles">Role:</label>
+    <input type="roles" name="roles">
     <br>
-    @error('password')
+    @error('roles')
     <span style="color:red;">{{$message}}</span>
     @enderror
     <br>

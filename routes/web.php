@@ -68,7 +68,10 @@ Route::get('/test', function() {
 });
 // Route::view('test','test');
 Route::view('user', 'user');
-Route::post('usercontroller', 'Usercontroller@account');
+Route::post('companyController', 'CompanyController@save');
+// Normal Post from controller
+// Route::post('usercontroller', 'Usercontroller@account');
+
 // Route::any('usercontroller', 'Usercontroller@account');
 
 Route::group(['middleware'=>['customAuth']], function(){
@@ -123,3 +126,4 @@ Route::get('/language/{lang}', function ($lang) {
 Route::get('connection', 'DbController@index');
 
 Route::get('contacts', 'ContactController@contact');
+Route::get('develop', 'DeveloperController@index');
