@@ -13,8 +13,22 @@ class EmpSeeder extends Seeder
     public function run()
     {
         DB::table('employees')->insert([
-            'name' => 'Vys',
-            'roles' => 'Megento Developer'
+            [
+                'name' => 'Rathina',
+                'roles' => 'Megento Developer'
+            ],
+            [
+                'name' => 'Vys',
+                'roles' => 'Megento Developer'
+            ],
+            [
+                'name' => 'Ram',
+                'roles' => 'Wordpress Developer'
+            ],
+            [
+                'name' => 'Pradeep',
+                'roles' => 'Wordpress Developer'
+            ]
         ]);
 
     }

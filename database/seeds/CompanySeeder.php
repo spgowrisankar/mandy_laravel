@@ -13,19 +13,24 @@ class CompanySeeder extends Seeder
     {
         DB::table('companies')->insert([
             [
-                'comp_name' => 'mandy',
+                'comp_name' => 'Mandy',
                 'city' => 'Coimbatore',
-                'emp_id' => 2
+                'employee_id' => 2
             ],
             [
                 'comp_name' => 'Vital',
                 'city' => 'Portmourth',
-                'emp_id' => 3
+                'employee_id' => 3
             ],
             [
                 'comp_name' => 'TCS',
                 'city' => 'Chennai',
-                'emp_id' => 1
+                'employee_id' => 1
+            ],
+            [
+                'comp_name' =>  'Wipro',
+                'city' => 'Bangalore',
+                'employee_id' => 1
             ]
         ]);
     }

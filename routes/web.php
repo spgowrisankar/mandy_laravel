@@ -91,6 +91,8 @@ Route::get('session/remove','SessionController@deleteSessionData');
 Route::get('/error/{value}', 'ErrorController@index');
 
 Auth::routes();
+// If ypu dont want register method us this
+// Auth::routes(['register' => false]);
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -127,3 +129,4 @@ Route::get('connection', 'DbController@index');
 
 Route::get('contacts', 'ContactController@contact');
 Route::get('develop', 'DeveloperController@index');
+Route::get('relation', 'EmployeeController@index');
