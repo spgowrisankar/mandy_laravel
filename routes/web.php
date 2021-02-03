@@ -90,7 +90,7 @@ Route::get('session/remove','SessionController@deleteSessionData');
 
 Route::get('/error/{value}', 'ErrorController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 // If ypu dont want register method us this
 // Auth::routes(['register' => false]);
 
@@ -130,3 +130,7 @@ Route::get('connection', 'DbController@index');
 Route::get('contacts', 'ContactController@contact');
 Route::get('develop', 'DeveloperController@index');
 Route::get('relation', 'EmployeeController@index');
+
+Route::get('/products','ProductController@index')->name('product.index');
+
+Route::post('/addproducts','ProductController@addProducts')->name('product.add');

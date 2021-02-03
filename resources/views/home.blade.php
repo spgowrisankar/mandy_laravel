@@ -20,4 +20,7 @@
         </div>
     </div>
 </div>
+<div class="links" style="text-align:center">
+    <a href="products"><span style="font-size:28px">Products</span> </a>
+</div>
 @endsection
